@@ -1,0 +1,479 @@
+:root {
+    --primary-green: #8A9A5B;
+    /* Sage Green */
+    --dark-green: #556B2F;
+    /* Dark Olive Green */
+    --forest-green: #2F4F4F;
+    /* Dark Slate Gray/Green */
+    --deep-jungle-green: #1A2421;
+    /* Darker Green for contrast */
+    --moss-green: #6B8E23;
+    /* Additional green */
+    --light-fern: #E0E8D9;
+    /* Very light green for backgrounds */
+
+    --bg-color: #F9F9F4;
+    /* Off-white/Cream */
+    --text-color: #333333;
+    --light-text: #555555;
+    --white: #ffffff;
+
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Cormorant Garamond', serif;
+
+    --transition-speed: 0.5s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-weight: 600;
+    /* Semi-bold */
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+.fade-in-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 0;
+    background: transparent;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links li a {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: var(--text-color);
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.6)), url('./assets/D&F-99.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.main-title {
+    margin-top: 100px;
+    font-size: 5rem;
+    margin-bottom: 0px;
+    color: var(--forest-green);
+}
+
+.date {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 400px;
+    color: var(--dark-green);
+}
+
+/* Countdown */
+.countdown-container {
+    background-color: rgba(34, 85, 34, 0.50);
+    /* Dark component background */
+    padding: 20px 40px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.countdown {
+    display: flex;
+    gap: 30px;
+    font-family: var(--font-heading);
+    color: var(--white);
+    /* White text on dark background */
+    justify-content: center;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countdown-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #555555;
+    /* Lighter green for numbers */
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* Buttons */
+.cta-button {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 15px 40px;
+    border: 1px solid var(--forest-green);
+    color: var(--forest-green);
+    transition: all 0.3s ease;
+    background: transparent;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background: var(--forest-green);
+    color: var(--white);
+}
+
+/* Section General */
+.section {
+    padding: 50px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--forest-green);
+}
+
+/* About Section */
+.about-section {
+    background-color: var(--light-fern);
+    /* Light green tint */
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    text-align: justify;
+}
+
+/* Ceremony Section */
+.ceremony-section {
+    background-color: white;
+}
+
+.ceremony-image {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 50px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.ceremony-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ceremony-details {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.detail-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-green);
+}
+
+.detail-item p {
+    font-size: 1.1rem;
+    color: var(--light-text);
+}
+
+.map-container {
+    height: 400px;
+    width: 100%;
+    filter: saturate(0.8);
+}
+
+/* RSVP Section & Iframe */
+.rsvp-section {
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* Hide scrollbars if any */
+}
+
+.form-container iframe {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    /* Clean removal of borders/scrolls handled in HTML but reinforced here */
+    border: none;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--forest-green);
+    color: white;
+    text-align: center;
+}
+
+.contact-section .section-title {
+    color: var(--primary-green);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+.submit-btn {
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: var(--dark-green);
+}
+
+/* Footer */
+footer {
+    padding: 40px 0;
+    text-align: center;
+    background-color: var(--deep-jungle-green);
+    color: #aaa;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 3rem;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    /* New Mobile Menu Logic Replaces Simple Hide */
+    .nav-links {
+        display: none;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .ceremony-details {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .countdown {
+        gap: 15px;
+    }
+
+    .countdown-number {
+        font-size: 1.8rem;
+    }
+}
+
+/* Carousel */
+.carousel-container {
+    height: 500px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-track {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    /* Slightly larger for better clickability */
+    padding: 0 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 10;
+    opacity: 0.5;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+    opacity: 1;
+    background: transparent;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Contact Section Button Fix */
+.contact-section .cta-button {
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.contact-section .cta-button:hover {
+    background: var(--white);
+    color: var(--forest-green);
+}
