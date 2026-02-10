@@ -125,6 +125,8 @@ a {
 /* Hero Section */
 .hero-section {
     height: 100vh;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -170,8 +172,9 @@ a {
 .date {
     font-size: 1.5rem;
     letter-spacing: 3px;
-    margin-bottom: 500px;
-    color: var(--dark-green);
+    margin-bottom: 450px;
+    color: var(--forest-green);
+    font-weight: 900;
 }
 
 /* Countdown */
@@ -223,6 +226,7 @@ a {
     transition: all 0.3s ease;
     background: transparent;
     cursor: pointer;
+    font-weight: 900;
 }
 
 .cta-button:hover {
