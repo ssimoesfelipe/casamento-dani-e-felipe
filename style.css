@@ -328,6 +328,88 @@ a {
     filter: saturate(0.8);
 }
 
+/* Gift Registry Section */
+.gifts-section {
+    background-color: var(--light-fern);
+}
+
+.gifts-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gifts-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.gift-option {
+    background-color: var(--white);
+    padding: 30px 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gift-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.gift-icon {
+    font-size: 2.8rem;
+    margin-bottom: 5px;
+}
+
+.gift-option h3 {
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+}
+
+.gift-option p {
+    font-size: 1rem;
+    color: var(--light-text);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.store-address {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.gift-button {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 12px 25px;
+    border: 2px solid var(--primary-green);
+    color: var(--primary-green);
+    transition: all 0.3s ease;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 900;
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+.gift-button:hover {
+    background: var(--primary-green);
+    color: var(--white);
+}
+
 /* RSVP Section & Iframe */
 .rsvp-section {
     background-color: var(--bg-color);
@@ -440,6 +522,19 @@ footer {
     .ceremony-details {
         flex-direction: column;
         gap: 20px;
+    }
+
+    .gifts-options {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .gift-option {
+        padding: 15px 10px;
+    }
+
+    .gift-icon {
+        font-size: 2.5rem;
     }
 
     .countdown {
